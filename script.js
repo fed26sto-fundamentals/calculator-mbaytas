@@ -22,7 +22,11 @@ function setFirstNumber(value) {
 }
 
 function setSecondNumber(value) {
-  secondNumber = parseInt(value);
+  if (value === undefined) {
+    secondNumber = undefined;
+  } else {
+    secondNumber = parseInt(value);
+  }
   console.log("Second number set to: ", secondNumber);
 }
 
@@ -55,9 +59,9 @@ function setOperator(newOperator) {
     secondNumber == undefined
   ) {
     setSecondNumber(currentDisplayValue);
-    operator = newOperator;
     console.log("Operator set to: ", newOperator);
     const result = operate(operator, firstNumber, secondNumber);
+    operator = newOperator;
     setCurrentDisplayValue("");
     setFirstNumber(result);
     setSecondNumber(undefined);
