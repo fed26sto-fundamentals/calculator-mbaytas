@@ -1,10 +1,12 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     border: none;
+    box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: sans-serif;
+    line-height: 1;
 }
 
 body {
@@ -21,30 +23,23 @@ body {
 .calculatorContainer {
     display: flex;
     flex-direction: column;
+    align-items: end;
     gap: 12px;
-    border: 1px solid #666;
-    border-radius: 24px;
-    padding: 12px;
 }
 
 .display {
     border-radius: 12px;
-    padding: 12px;
-    height: 128px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
-    max-width: 100%;
+    max-width: 320px;
 }
 
 .display p {
     color: #fff;
-    text-align: right;
-    font-family: sans-serif;
-    max-width: 320px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    text-align: end;
+    font-weight: 300;
 }
 
 .display p.history {
@@ -53,7 +48,6 @@ body {
 
 .display p.current {
     font-size: 64px;
-    font-weight: 300;
 }
 
 .buttons {
@@ -79,14 +73,21 @@ body {
 }
 
 .buttons button {
-    height: 80px;
-    width: 80px;
+    height: 72px;
+    width: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #272727;
-    border-radius: 40%;
+    border-radius: 50%;
     font-size: 36px;
     color: #fff;
 }
 
-.operatorButtons button {
+button.orangeButton {
     background-color: #d7820f;
+}
+
+button.grayButton {
+    background-color: #959595;
 }
